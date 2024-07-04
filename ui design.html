@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+ <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0D0D0D;
+    color: #F2F2F2;
+}
+
+#header1 {
+   
+   padding-right: 5%;
+   padding-left: 5%;
+}
+
+.logo1 {
+    width: 300px;  
+    height: auto;
+    margin-top: -40px;
+    margin-left: -120px;
+}
+
+.container1 {
+    max-width: 1200px;   
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+    margin-top: -40px;
+}
+
+.ul12 {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #F2F2F2; 
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: ''; 
+    width: 0;
+    height: 3px;
+    background: #D6AF00;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.services-list img{
+  width: 800px;
+  height: 500px;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+        
+}
+
+.services-list{
+    text-align: center;
+}
+
+#services{
+    padding: 30px 0;  
+}
+
+.link{
+    color: #D6AF00;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.container{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #F2F2F2; 
+    margin: 20px auto; 
+    width: 90%; 
+  }
+
+
+/*-----------------css for small screen--------------*/
+
+nav .fa-solid{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    
+    nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo1 {
+            width: 200px;
+            margin-left: 0;
+        }
+
+        .ul12 {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .ul12.active {
+            display: flex;
+        }
+
+        .services-list img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container1, .container {
+            padding: 0 5px;
+        }
+
+        nav ul li a {
+            font-size: 16px;
+        }
+
+        .fa-bars {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+            color: #F2F2F2;
+        }
+
+        .fa-xmark {
+            display: none;
+        }
+
+        .ul12.active ~ .fa-xmark {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+            color: #F2F2F2;
+        }
+
+        .ul12.active ~ .fa-bars {
+            display: none;
+        }
+
+        
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <div id="header1">
+        <div class="container1">
+          <nav>
+              <img src="images/logo1.png" class="logo1">
+              <ul id="sidemenu"  class="ul12">
+                  <li><b><a href="#header1">Home</a></b></li>
+                  <li><b><a href="#about">About</a></b></li>
+                  <li><b><a href="#services">Services</a></b></li>
+                  <li><b><a href="#portfolio">Portfolio</a></b></li>
+                  <li><b><a href="#contact">Contact</a></b></li>
+                  <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+              </ul>
+              <i class="fa-solid fa-bars"  onclick="openmenu()"></i>
+          </nav>
+      </div>
+      </div><br>
+
+    
+    <div id="services">
+        <div class="container">
+            <h2>Coffee Shop App</h2><br><br>
+            <div class="services-list">
+                <div>
+                 <img src="images/coffeemain.png">
+                </div>
+            </div><br>
+            <a href="design1.html" class="link">Here See Full Design</a>
+        </div><hr><br><br><br>
+        <div class="container">
+            <h2>Clothing Shop App Design</h2><br><br>
+            <div class="services-list">
+                <div>
+                 <img src="images/clothmain.png">
+                </div>
+            </div><br>
+            <a href="design2.html" class="link">Here See Full Design</a>
+        </div><hr><br><br><br>
+        <div class="container">
+            <h2>Ice Cream App Design</h2><br><br>
+            <div class="services-list">
+                <div>
+                 <img src="images/icemain.png">
+                </div>
+            </div><br>
+            <a href="design3.html" class="link">Here See Full Design</a>
+        </div><hr><br><br><br>
+    </div>
+        
+
+
+ <script>
+   
+        var sidemenu = document.getElementById("sidemenu");
+     
+        function openmenu(){
+         sidemenu.style.right = "0";
+        }
+        function closemenu(){
+         sidemenu.style.right = "-200px";
+        }
+     </script>
+</body>
+</html>
